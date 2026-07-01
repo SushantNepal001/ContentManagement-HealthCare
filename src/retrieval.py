@@ -23,7 +23,7 @@ TWO WAYS TO ASK
   a sentence the embedding model can match against the written policies.
 """
 
-from vector_store import build_policy_collection
+from src.vector_store import build_policy_collection
 
 # Build (or rebuild) the collection once when this module is imported, and reuse
 # it for every retrieval. Rebuilding six short snippets is instant.
@@ -125,7 +125,7 @@ if __name__ == "__main__":
     print(f"  -> [{best['id']}] {best['title']}  (distance={best['distance']:.3f})\n")
 
     # Demo 2: every sample claim, routed to its best-matching policy.
-    from data.claims import CLAIMS
+    from src.data.claims import CLAIMS
 
     print("=== Each sample claim -> best-matching policy ===")
     for c in CLAIMS:

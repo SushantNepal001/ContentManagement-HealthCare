@@ -91,15 +91,16 @@ and the **offline saved rules** (handy for a deterministic demo).
 
 ### Run the individual steps (optional)
 
-Each stage also runs on its own, which is useful for understanding the internals:
+Each stage also runs on its own (as a module, from the project root), which is
+useful for understanding the internals:
 
 ```bash
-python data/policies.py     # list the policy snippets
-python data/claims.py       # list the sample claims
-python vector_store.py      # embed policies + a semantic-search sanity check
-python retrieval.py         # route each claim to its best-matching policy
-python rule_generator.py    # convert each policy into a rule (LIVE or fallback)
-python engine.py            # judge every claim end-to-end (scores 8/8, offline)
+python -m src.data.policies   # list the policy snippets
+python -m src.data.claims     # list the sample claims
+python -m src.vector_store    # embed policies + a semantic-search sanity check
+python -m src.retrieval       # route each claim to its best-matching policy
+python -m src.rule_generator  # convert each policy into a rule (LIVE or fallback)
+python -m src.engine          # judge every claim end-to-end (scores 8/8, offline)
 ```
 
 ---
@@ -108,16 +109,17 @@ python engine.py            # judge every claim end-to-end (scores 8/8, offline)
 
 ```
 .
-├── data/
-│   ├── policies.py       # 6 written policy snippets (the content to manage)
-│   └── claims.py         # 8 structured test claims
-├── vector_store.py       # STORE:    embed policies into ChromaDB
-├── retrieval.py          # RETRIEVE: semantic search (RAG "R")
-├── rule_generator.py     # GENERATE: policy -> JSON rule via Claude (RAG "G")
-├── engine.py             # JUDGE:    deterministic PAY/DENY/FLAG (no AI)
-├── app.py                # DISPLAY:  the Streamlit UI
+├── app.py                    # DISPLAY: the Streamlit UI (entry point)
+├── src/
+│   ├── data/
+│   │   ├── policies.py       # 6 written policy snippets (the content to manage)
+│   │   └── claims.py         # 8 structured test claims
+│   ├── vector_store.py       # STORE:    embed policies into ChromaDB
+│   ├── retrieval.py          # RETRIEVE: semantic search (RAG "R")
+│   ├── rule_generator.py     # GENERATE: policy -> JSON rule via Claude (RAG "G")
+│   └── engine.py             # JUDGE:    deterministic PAY/DENY/FLAG (no AI)
 ├── requirements.txt
-└── .env.example          # keyless template for the API key
+└── .env.example              # keyless template for the API key
 ```
 
 ---

@@ -30,7 +30,7 @@ show stale or half-loaded data.
 import chromadb
 from chromadb.utils import embedding_functions
 
-from data.policies import POLICIES
+from src.data.policies import POLICIES
 
 # Where ChromaDB keeps its local files. This folder is git-ignored and is fully
 # regenerated from code, so it never needs to be committed.

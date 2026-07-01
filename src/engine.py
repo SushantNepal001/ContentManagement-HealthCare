@@ -144,9 +144,9 @@ def judge_claim(rule, claim):
 if __name__ == "__main__":
     # End-to-end check with NO live API: use the saved fallback rules so this
     # runs offline, route each claim to its policy, and judge it.
-    from data.claims import CLAIMS
-    from rule_generator import FALLBACK_RULES
-    from retrieval import retrieve_for_claim
+    from src.data.claims import CLAIMS
+    from src.rule_generator import FALLBACK_RULES
+    from src.retrieval import retrieve_for_claim
 
     print("Judging every sample claim (using saved rules, offline):\n")
     correct = 0
