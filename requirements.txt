@@ -1,0 +1,9 @@
+# Top-level dependencies for the Policy-to-Rule POC.
+# Pinned to the versions this project was built and tested against.
+# Their sub-dependencies are resolved automatically by pip.
+# Tested on Python 3.9.
+
+anthropic==0.115.0      # Claude API client (the LLM "Generate" step)
+chromadb==1.5.9         # local vector database + built-in embeddings (Retrieve)
+python-dotenv==1.2.1    # loads the API key from a local .env file
+streamlit==1.50.0       # the web UI (Display)

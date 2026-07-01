@@ -99,6 +99,15 @@ def _check_condition(condition, claim):
     return False
 
 
+def evaluate_conditions(rule, claim):
+    """Return each condition paired with whether it held for this claim.
+
+    Used by the UI to SHOW the engine's reasoning, condition by condition:
+        [ (condition_dict, True/False), ... ]
+    """
+    return [(cond, _check_condition(cond, claim)) for cond in rule["conditions"]]
+
+
 def judge_claim(rule, claim):
     """Apply one rule to one claim and return the verdict.
 
@@ -111,7 +120,7 @@ def judge_claim(rule, claim):
         }
     """
     all_conditions_true = all(
-        _check_condition(cond, claim) for cond in rule["conditions"]
+        passed for _, passed in evaluate_conditions(rule, claim)
     )
 
     if all_conditions_true:
