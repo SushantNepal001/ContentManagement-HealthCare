@@ -1,0 +1,32 @@
+# --- Secrets: NEVER commit these ---
+.env
+.env.*
+!.env.example
+*.key
+secrets.*
+
+# --- Python ---
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+env/
+
+# --- ChromaDB local store (regenerated from code) ---
+chroma/
+.chroma/
+*.sqlite3
+chroma_db/
+
+# --- OS / editor noise ---
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# --- Streamlit ---
+.streamlit/secrets.toml
+
+# --- Local planning doc, not for the repo ---
+CLAUDE.md
