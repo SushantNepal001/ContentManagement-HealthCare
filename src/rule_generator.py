@@ -285,7 +285,7 @@ def policy_to_rule(policy_text, policy_id):
 
 if __name__ == "__main__":
     # Convert every policy and show the resulting rule + where it came from.
-    from data.policies import POLICIES
+    from src.data.policies import POLICIES
 
     for p in POLICIES:
         rule, source = policy_to_rule(p["text"], p["id"])

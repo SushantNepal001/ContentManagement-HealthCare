@@ -23,10 +23,10 @@ import json
 
 import streamlit as st
 
-from data.claims import CLAIMS
-from retrieval import retrieve_for_claim, claim_to_query
-from rule_generator import policy_to_rule, FALLBACK_RULES
-from engine import judge_claim, evaluate_conditions
+from src.data.claims import CLAIMS
+from src.retrieval import retrieve_for_claim, claim_to_query
+from src.rule_generator import policy_to_rule, FALLBACK_RULES
+from src.engine import judge_claim, evaluate_conditions
 
 
 # Human-friendly wording for each operator, used in the reasoning trace.
