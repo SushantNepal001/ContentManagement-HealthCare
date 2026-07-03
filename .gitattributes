@@ -1,0 +1,5 @@
+Presentation[[:space:]]and[[:space:]]video/*.pptx filter=lfs diff=lfs merge=lfs -text
+Report/*.docx filter=lfs diff=lfs merge=lfs -text
+*.docx filter=lfs diff=lfs merge=lfs -text
+Presentation[[:space:]]and[[:space:]]video/*.mov filter=lfs diff=lfs merge=lfs -text
+Presentation[[:space:]]and[[:space:]]video/*.mp4 filter=lfs diff=lfs merge=lfs -text
