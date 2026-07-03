@@ -30,3 +30,5 @@ Thumbs.db
 
 # --- Local planning doc, not for the repo ---
 CLAUDE.md
+*.mp4
+*.mov
