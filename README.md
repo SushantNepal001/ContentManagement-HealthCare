@@ -124,7 +124,7 @@ python -m src.engine          # judge every claim end-to-end (scores 8/8, offlin
 
 ---
 
-## Why it's built this way (the safety story)
+## Why it's built this way
 
 - **Generative AI only drafts.** The LLM converts policy text into a rule. It never
   sees a claim and never issues a payment decision.
